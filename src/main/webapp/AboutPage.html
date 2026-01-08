@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — ElectroHub</title>
+  <style>
+    :root{
+      --bg:#462029;
+      --card:#0b1622;
+      --muted:#9aa6b2;
+      --accent1:#6ee7b7;
+      --accent2:#3cf17f;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --radius:16px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(91, 33, 30, 0.822), transparent 10%),
+                  radial-gradient(1000px 500px at 90% 90%, rgba(110,231,183,0.04), transparent 12%),
+                  var(--bg);
+      color:#cbc7dee3;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px;
+      line-height:1.45;
+    }
+
+    .container{max-width:1100px;margin:0 auto}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;
+    }
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent2),var(--accent1));
+      display:flex;align-items:center;justify-content:center;font-weight:800;color:#06202b;font-size:20px;box-shadow:0 6px 24px rgba(0,0,0,0.6);
+    }
+    .brand h1{font-size:20px;letter-spacing:0.4px}
+    .brand p{font-size:12px;color:var(--muted);margin-top:2px}
+
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+    nav a.primary{background:linear-gradient(90deg,var(--accent2),var(--accent1));padding:8px 14px;border-radius:12px;color:#022024;font-weight:600}
+
+    .hero{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:var(--radius);padding:28px;display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:center;margin-bottom:22px;box-shadow:0 8px 30px rgba(2,6,23,0.6);
+      border:1px solid var(--glass-2);
+    }
+    .hero h2{font-size:28px;margin-bottom:10px}
+    .hero p{color:var(--muted);font-size:15px}
+    .stats{display:flex;gap:14px;margin-top:16px}
+    .stat{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:12px;border-radius:12px;width:110px;text-align:center;border:1px solid var(--glass-2)}
+    .stat strong{display:block;font-size:18px}
+    .hero-card{background:linear-gradient(135deg, rgba(255,255,255,0.01), transparent);padding:18px;border-radius:14px;border:1px solid var(--glass);}
+    .hero-card img{width:100%;height:220px;object-fit:cover;border-radius:10px}
+    .cta{margin-top:16px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:999px;font-weight:700;border:none;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#012023}
+    .btn-ghost{background:transparent;border:1px solid var(--glass);color:var(--muted)}
+
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:22px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:14px;border:1px solid var(--glass);min-height:120px}
+    .card h3{margin-bottom:8px}
+    .card p{color:var(--muted);font-size:14px}
+
+    .about-text{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:20px;border-radius:12px;border:1px solid var(--glass-2);margin-bottom:22px}
+
+    .team{display:flex;gap:14px}
+    .member{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:14px;border-radius:12px;border:1px solid var(--glass);flex:1;text-align:center}
+    .avatar{width:86px;height:86px;border-radius:12px;margin:0 auto 10px;display:block;background:linear-gradient(135deg,var(--accent1),var(--accent2));font-weight:700;color:#012023;display:flex;align-items:center;justify-content:center;font-size:20px}
+    .member small{display:block;color:var(--muted);margin-top:6px}
+
+    footer{margin-top:28px;padding:18px;border-radius:12px;border:1px solid var(--glass-2);background:transparent;text-align:center;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .features{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      body{padding:18px}
+      .features{grid-template-columns:1fr}
+      nav{display:none}
+      header{flex-direction:column;gap:12px;align-items:flex-start}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">EP</div>
+        <div>
+          <h1>Electronic Portal</h1>
+          <p>Your one-stop online electronics portal</p>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="alog">Features</a>
+        <a href="#team">About Owener</a>
+        <a href="#contact" class="primary">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="about-title">
+      <div>
+        <h2 id="about-title">About Electronic Portal</h2>
+        <p>ElectroHub brings the latest gadgets, trusted components, and smart home devices under one roof. We combine carefully curated products, expert reviews, and hassle-free support so you can buy with confidence.</p>
+
+        <div class="stats" role="list">
+          <div class="stat" role="listitem"><small class="muted">Products</small><strong>100+</strong></div>
+          <div class="stat" role="listitem"><small class="muted">Cities served</small><strong>50+</strong></div>
+          <div class="stat" role="listitem"><small class="muted">5★ rating</small><strong>4.8</strong></div>
+        </div>
+
+        <div class="cta">
+          <button class="btn btn-primary"><a href="view1">Shop Now</a></button>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="product showcase">
+        <img src="https://www.wonderfulpcb.com/wp-content/uploads/2025/03/Integrated-Circuit-IC.png" alt="Modern electronics showcase">
+        <p style="margin-top:12px;color:var(--muted);font-size:13px">Curated picks: latest phones, earbuds, smartwatches and DIY components.</p>
+      </aside>
+    </section>
+
+    <section id="features" class="features" aria-label="key features">
+      <div class="card">
+        <h3>Curated Selection</h3>
+        <p>We hand-pick products from reliable brands and independent makers to ensure quality and value.</p>
+      </div>
+
+      <div class="card">
+        <h3>Expert Guides</h3>
+        <p>In-depth buying guides, how-to videos, and troubleshooting articles to help you choose and maintain your tech.</p>
+      </div>
+
+      <div class="card">
+        <h3>Fast Delivery</h3>
+        <p>Optimized shipping and easy returns — nationwide delivery with careful packaging for fragile electronics.</p>
+      </div>
+    </section>
+
+    <section class="about-text">
+      <h3>Our Mission</h3>
+      <p style="color:var(--muted);margin-top:8px">To make electronics accessible, transparent, and trustworthy for everyone — from makers and hobbyists to professionals and everyday buyers. We believe technology should empower, not confuse. That's why we pair product curation with clear, practical advice.</p>
+    </section>
+
+    <section id="team" class="team" aria-label="team">
+      <div class="member">
+        <div class="avatar">PC</div>
+        <h4>Pransu Chaturvedi</h4>
+        <small>Owener of Project</small>
+        <p style="color:var(--muted);font-size:13px;margin-top:8px">Product strategist with a love for clean design and great customer experiences.</p>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <p style="margin-bottom:8px">Questions or partnerships? <a href="mailto:hello@electrohub.example" style="color:var(--accent1);text-decoration:none">pransu0101@gmail.com</a></p>
+      <small>© <span id="year"></span> Electronic Portal — Built by Myself.</small>
+    </footer>
+  </div>
+
+  <script>
+    // current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

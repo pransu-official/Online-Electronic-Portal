@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+  <title>Customer Register</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .register-container {
+      background: #fff;
+      width: 400px;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    }
+
+    h3 {
+      text-align: center;
+      color: #0d47a1;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #bbb;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #0d47a1;
+      outline: none;
+      box-shadow: 0 0 5px rgba(13, 71, 161, 0.4);
+    }
+
+    textarea {
+      resize: none;
+      height: 70px;
+    }
+
+    button {
+      width: 100%;
+      background: #0d47a1;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 25px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #1565c0;
+      transform: scale(1.05);
+    }
+
+    .footer-text {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .footer-text a {
+      color: #0d47a1;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-text a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h3>Customer Register</h3>
+    <form method="post" action="CustomerRegistrationServlet">
+      <label>Username:</label>
+      <input type="text" name="username" required>
+
+      <label>Password:</label>
+      <input type="password" name="password" required>
+
+      <label>First Name:</label>
+      <input type="text" name="firstname">
+
+      <label>Last Name:</label>
+      <input type="text" name="lastname">
+
+      <label>Address:</label>
+      <textarea name="address"></textarea>
+
+      <label>Email:</label>
+      <input type="email" name="email">
+
+      <label>Mobile:</label>
+      <input type="text" name="mobile">
+
+      <button type="submit">Register</button>
+    </form>
+
+    <div class="footer-text">
+      Already have an account? <a href="CustomerLogin.html">Login here</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Electronic Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Reset */
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif;}
+body, html {height:100%; overflow-x:hidden; background: linear-gradient(135deg, #4eb107, hsl(342, 80%, 17%) , #140463); color: #fff;}
+
+/* Navigation */
+nav {
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:100;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+nav .logo { font-size:1.8rem; font-weight:bold; color:#4ab006; }
+nav ul { list-style:none; display:flex; gap:25px; }
+nav ul li a { color:#fff; text-decoration:none; font-weight:500; padding:8px 15px; border-radius:8px; transition:0.3s ease; }
+nav ul li a:hover { background: linear-gradient(135deg,#4ab006,#cfa80d); color:#000; transform:scale(1.1); }
+
+/* Hero Section */
+.hero-wrapper {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    padding-top:100px;
+    gap:40px;
+}
+
+/* Pictures on sides */
+.side-pics {
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+.pic-card {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pic-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.pic-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+}
+
+/* Main Container */
+.hero {
+    background: rgba(0,0,0,0.7);
+    padding: 60px 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    max-width: 500px;
+    text-align:center;
+}
+h1 { font-size:2.5rem; color:#4ab006; margin-bottom:20px; }
+p { font-size:1.1rem; color: #5e8856; margin-bottom:40px; }
+.btn-container a {
+    display:inline-block;
+    margin:10px;
+    padding:15px 30px;
+    border-radius: 10px;
+    font-weight:bold;
+    text-decoration:none;
+    color:#fff;
+    background: linear-gradient(135deg,#3a0c10,#b92113);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(222, 78, 78, 0.3);
+}
+.btn-container a:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 12px 25px rgba(0,0,0,0.5); }
+
+/* Footer */
+footer { text-align:center; font-size:0.9rem; color:#ccc; margin-top:50px; }
+
+/* Responsive */
+@media(max-width:1024px){
+    .hero-wrapper { flex-direction:column; gap:30px; }
+    .side-pics { flex-direction: row; justify-content:center; gap:20px; }
+}
+@media(max-width:480px){
+    h1 { font-size:1.8rem; }
+    p { font-size:0.95rem; }
+    .hero { padding:40px 20px; }
+    .pic-card { width:100px; height:100px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="logo">Online Electronics</div>
+    <ul>
+        <li><a href="AdminLogin.html">Home</a></li>
+        <li><a href="AdminLogin.html">Products</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section with Side Pictures -->
+<div class="hero-wrapper">
+    <!-- Left Side Pictures -->
+    <div class="side-pics">
+        <div class="pic-card"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80" alt="Device1"></div>
+        <div class="pic-card"><img src="https://images.unsplash.com/photo-1649877508777-1554357604eb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=880" alt="Device2"></div>
+    </div>
+
+    <!-- Main Hero Container -->
+    <div class="hero">
+        <h1>Online Electronic Portal</h1>
+        <p>Explore the latest gadgets and manage your electronic world effortlessly. Login to continue as Admin or Customer.</p>
+        <div class="btn-container">
+            <a href="AdminLogin.html">Admin Login</a>
+            <a href="CustomerLogin.html">Customer Login</a>
+        </div>
+    </div>
+
+    <!-- Right Side Pictures -->
+    <div class="side-pics">
+        <div class="pic-card"><img src="https://plus.unsplash.com/premium_photo-1681336999969-516d993e88cc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="Device3"></div>
+        <div class="pic-card"><img src="https://plus.unsplash.com/premium_photo-1681337000010-57e7355ef880?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="Device4"></div>
+    </div>
+</div>
+
+<footer>© 2025 Online Electronic Portal ⚡</footer>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Products</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Reset & Body */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif;}
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e, #162447);
+    color: #fff;
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+    background: #000080;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+nav .logo { font-size: 1.5rem; font-weight: bold; color: #8B4513; letter-spacing: 1px;}
+nav ul { list-style: none; display: flex; gap: 25px;}
+nav ul li a { text-decoration:none; color:#fff; font-weight:500; transition:0.3s;}
+nav ul li a:hover { color:#ff6f61; }
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 80px; /* nav space */
+}
+
+/* Form Card */
+.card {
+    background: rgba(30,30,40,0.95);
+    padding: 50px 30px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease forwards;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: linear-gradient(120deg, #ff6f61, #ff3b2e);
+    opacity:0.1;
+    pointer-events:none;
+}
+
+.card img {
+    width: 80px;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.card h1 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #8B0000 ;
+    letter-spacing:1px;
+}
+
+/* Form Styles */
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px 15px;
+    border-radius: 10px;
+    border: none;
+    background: #2b2b3a;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease all;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.8rem;
+    color: #ff6f61;
+    background: #2b2b3a;
+    padding: 0 5px;
+}
+
+.card input[type="submit"] {
+    background: #4B0082;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.card input[type="submit"]:hover {
+    background: #ff3b2e;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0);}
+    50% { transform: translateY(-10px);}
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .card { padding: 40px 20px;}
+    .card h1 { font-size: 1.7rem;}
+}
+@media(max-width:480px){
+    nav { flex-direction: column; gap:10px;}
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="logo">MyShop</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>       
+        <li><a href="view1">Products</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="AdminLogin.html">Login/SignUp</a></li>
+    </ul>
+</nav>
+
+<!-- Hero / Form Section -->
+<div class="hero">
+    <div class="card">
+        <img src="https://img.icons8.com/ios-glyphs/90/ffffff/add.png" alt="Add Product">
+        <h1>Add Products</h1>
+        <form action="aps" method="post">
+            <div class="form-group">
+                <input type="text" name="pcode" placeholder=" " required>
+                <label>Product Code</label>
+            </div>
+            <div class="form-group">
+                <input type="text" name="pname" placeholder=" " required>
+                <label>Product Name</label>
+            </div>
+            <div class="form-group">
+                <input type="text" name="pcompany" placeholder=" " required>
+                <label>Product Company</label>
+            </div>
+            <div class="form-group">
+                <input type="text" name="pprice" placeholder=" " required>
+                <label>Product Price</label>
+            </div>
+            <div class="form-group">
+                <input type="text" name="pqty" placeholder=" " required>
+                <label>Product Quantity</label>
+            </div>
+            <input type="submit" value="Add Product">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
